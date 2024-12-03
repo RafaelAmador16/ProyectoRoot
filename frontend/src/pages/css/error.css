@@ -1,0 +1,42 @@
+/* Contenedor principal de la página de error */
+.error-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-color: #f4f4f4; /* Fondo gris claro */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  /* Título principal */
+  .error-page h2 {
+    font-size: 3rem;
+    color: #2980b9; /* Rojo para resaltar el error */
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Enlace de vuelta al inicio */
+  .error-page p {
+    font-size: 1.2rem;
+    color: #3498db; /* Azul claro */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  /* Efecto hover sobre el enlace */
+  .error-page p:hover {
+    color: #2980b9; /* Azul más oscuro al pasar el ratón */
+  }
+  
+  /* Contenedor para asegurar que todo esté centrado en la página */
+  .error-page a {
+    text-decoration: none; /* Quitar subrayado */
+  }

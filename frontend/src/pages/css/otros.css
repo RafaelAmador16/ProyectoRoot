@@ -1,0 +1,788 @@
+.liga-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+  }
+  
+  .liga-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .liga-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ajustar según necesites */
+  }
+  
+  .liga-label-text {
+    margin-right: 10px; /* Espacio entre el texto y el input */
+    font-size: 18px;
+  }
+  
+  .liga-input2 {
+    flex-shrink: 0;
+    width: 100px; /* Ancho del input, ajustable según sea necesario */
+  }
+  .liga-input,
+  .liga-input2,
+  .liga-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .liga-input:focus,
+  .liga-select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .liga-submit {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+.titulo{
+    margin-top: 30px;
+    text-align: center;
+}
+/* General Styles */
+.partida-form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Arial", sans-serif;
+    margin-bottom: 100px; /* Espacio extra para el footer */
+  }
+  
+  .partida-form h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .form-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .form-select:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .random-button,
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .random-button:hover,
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .no-players-warning p {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .create-players-link,
+  .details-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .create-players-link:hover,
+  .details-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Existing Partida Section */
+  .existing-partida {
+    text-align: center;
+  }
+  
+  .create-new-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-new-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .partida-form-container {
+      padding: 15px;
+      margin-bottom: 150px;
+    }
+  
+    .random-button,
+    .submit-button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
+  
+.Marquesado{
+  background-color: orange;
+}
+.Nido{
+  background-color:  rgb(57, 130, 255);
+}
+.Alianza{
+  background-color: #19fb19;
+}
+.Vagabundo{
+  background-color: gray;
+}
+.detalles-partida-jugador.Marquesado{
+  background-color: orange;
+}
+.detalles-partida-jugador.Nido{
+  background-color:  rgb(57, 130, 255);
+}
+.detalles-partida-jugador.Alianza{
+  background-color: #19fb19;
+}
+.detalles-partida-jugador.Vagabundo{
+  background-color: gray;
+}
+
+/* Contenedor principal */
+.detalles-partida-container {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 700px;
+  background:  #fdfbfb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Títulos */
+.detalles-partida-titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Formulario */
+.detalles-partida-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Lista de jugadores */
+.detalles-partida-jugador {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Campos de entrada */
+.detalles-partida-input {
+  width: 80px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.detalles-partida-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Etiquetas y checkboxes */
+.detalles-partida-label {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Alineación vertical */
+  gap: 1rem; /* Espaciado entre elementos */
+  flex-wrap: nowrap; /* Asegura que los elementos estén en una sola línea */
+  color: #34495e;
+  justify-content: flex-end;
+}
+
+.detalles-partida-checkbox {
+  transform: scale(1.2);
+  accent-color: #3498db;
+}
+
+/* Botón */
+.detalles-partida-boton {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detalles-partida-boton:hover {
+  background: linear-gradient(135deg, #2980b9, #1c6ea4);
+  transform: scale(1.03);
+}
+
+.detalles-partida-boton:active {
+  transform: scale(0.98);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .detalles-partida-container {
+    padding: 1rem;
+  }
+
+  .detalles-partida-jugador {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .detalles-partida-input {
+    width: 100%;
+  }
+}
+.detalles-partida-ranking {
+  display: flex; /* Alinea los datos del jugador en una fila */
+  justify-content: space-between; /* Espaciado entre contenido */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  font-size: 1rem; /* Tamaño de fuente base */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #fdfbfb;
+ 
+}
+.detalles-partida-ranking {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animación suave */
+}
+.detalles-partida-ranking.Marquesado{
+  background-color: orange;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1); /* Sombra sutil */
+}
+.detalles-partida-ranking.Nido{
+  background-color:  rgb(57, 130, 255);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1); /* Sombra sutil */
+}
+.detalles-partida-ranking.Alianza{
+  background-color: #19fb19;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1); /* Sombra sutil */
+}
+.detalles-partida-ranking.Vagabundo{
+  background-color: gray;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1); /* Sombra sutil */
+}
+.detalles-partida-ranking.Marquesado:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out; 
+}
+.detalles-partida-ranking.Nido:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out; 
+}
+.detalles-partida-ranking.Alianza:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out; 
+}
+.detalles-partida-ranking.Vagabundo:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out; 
+}
+
+.detalles-partida-ranking:hover {
+  transform: translateY(-2px); /* Efecto al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+.detalles-partida-ranking2 {
+  display: flex; /* Activar Flexbox */
+  justify-content: space-between; /* Separar elementos a los lados */
+  align-items: center; /* Centrar verticalmente */
+  width: 100%; /* Asegurar que use todo el ancho disponible */
+  padding: 0.5rem 0.8rem; /* Espaciado interno */
+  border-radius: 6px; /* Bordes redondeados */
+}
+
+.info-izquierda {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  flex: 1; /* Ocupa el espacio restante si es necesario */
+  margin-right: 0.5rem; /* Espaciado opcional */
+  margin-left: 10px;
+}
+
+.info-derecha {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: right; /* Alineación de texto derecha */
+  flex-shrink: 0; /* Evita que se comprima */
+  margin-left: auto; /* Empuja al extremo derecho */
+  margin-right: 10px;
+}
+
+
+.detalles-partida-ranking2 strong {
+  font-weight: 600; /* Resalta palabras clave */
+}
+
+.detalles-partida-ranking2 span {
+  font-weight: 500; /* Letras más gruesas */
+  font-style: italic; /* Hace que se vea más distinguido */
+}
+
+
+
+.detalles-partida-boton {
+  padding: 0.7rem 1.5rem; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  color: #fff; /* Texto blanco */
+  background-color: #2980b9; /* Fondo azul */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Indica que es un botón clickeable */
+  transition: background-color 0.3s ease; /* Transición suave para el hover */
+}
+
+.detalles-partida-boton:hover {
+  background-color: #3498db; /* Color más claro al pasar el ratón */
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+  .detalles-partida-ranking {
+    padding: 0.5rem; /* Reducir padding en pantallas pequeñas */
+  }
+
+  .detalles-partida-ranking div {
+    font-size: 0.9rem; /* Reducir tamaño de texto */
+    flex-direction: column; /* Poner en columna en pantallas pequeñas */
+    align-items: flex-start; /* Alinear texto a la izquierda */
+    gap: 0.5rem;
+  }
+
+  .detalles-partida-boton {
+    width: 100%; /* Botón ocupa todo el ancho en móvil */
+    text-align: center; /* Centrar texto */
+  }
+}
+.detalles-partida-boton-container {
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  margin-top: 1rem; /* Espaciado superior opcional */
+}
+/* Contenedor principal del formulario */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Título del formulario */
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilos del formulario */
+.jugador-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de los grupos de formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Etiquetas de los campos */
+.form-label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Estilos de los campos de entrada */
+.form-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Estilo para el botón de submit */
+.form-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #2980b9;
+}
+
+/* Estilo para el ID del creador */
+.creator-id {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .jugador-form {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .form-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+/* Estilo general del formulario */
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+/* Título del formulario */
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Estilo de cada grupo de formulario */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Etiquetas de los campos */
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Estilo de los inputs */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Botón de enviar */
+.form-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Resalta el campo con un borde rojo si hay un error */
+.form-input.error {
+  border-color: red;
+}
+
+.form-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* Contenedor general del formulario */
+.register-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+/* Título del formulario */
+.register-form-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Estilo de los grupos de formulario */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Etiquetas de los campos */
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Estilo de los inputs */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Resalta el campo con un borde rojo si hay un error */
+.form-input.error {
+  border-color: red;
+}
+
+/* Botón de enviar */
+.form-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Botón deshabilitado (cuando el formulario se está enviando) */
+.form-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Estilo para mensajes de alerta */
+.alert-message {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #28a745; /* Verde para éxito */
+  border-radius: 4px;
+  text-align: center;
+}
+
+.error-message {
+  background-color: #dc3545; /* Rojo para errores */
+}
+
+/* Contenedor del formulario centrado */
+.register-form-wrapper {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  height: 100vh; /* 100% de la altura de la ventana */
+  background-color: #f4f7fc; /* Fondo suave */
+}
+
+/* Contenedor del formulario */
+.register-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px; /* Limitar el ancho máximo */
+  width: 100%; /* Ocupa todo el ancho hasta el máximo de 400px */
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.register-form-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilo de cada campo de formulario */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007bff; /* Resaltar cuando el campo está seleccionado */
+}
+
+/* Estilo para el botón de envío */
+.form-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para mensajes de alerta */
+.alert-message {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #28a745; /* Verde para éxito */
+  border-radius: 4px;
+  text-align: center;
+}
+
+.error-message {
+  background-color: #dc3545; /* Rojo para errores */
+}
+
+/* Espaciado entre los elementos */
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.alinear-derecha {
+  margin-left: auto;
+}

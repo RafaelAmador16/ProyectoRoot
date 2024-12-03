@@ -1,0 +1,588 @@
+/* Contenedor de las imágenes */
+  
+  /* Imágenes de Marquesado */
+  .foto-Marquesado1, .foto-Marquesado2 {
+    width: 5%;
+    position: absolute;
+    bottom: 65px;
+    visibility: hidden;
+    transition: opacity 0s ease 0s, visibility 0s ease 0s;
+  }
+  
+  /* Imágenes de Nido */
+  .foto-Nido1, .foto-Nido2, .foto-Nido3 {
+    width: 4%;
+    position: absolute;
+    bottom:65px;
+    visibility: hidden;
+    transition: opacity 0s ease 0s, visibility 0s ease 0s;
+  }
+  
+  
+  @media (min-width: 1028px) {
+  @keyframes moveMarquesado {
+    0% {
+        left: -10%; 
+        opacity: 1; 
+        visibility: visible; 
+    }
+    5%{
+        left: -10%; 
+        opacity: 1; 
+        visibility: visible; 
+    }
+    44%{
+        opacity: 1; 
+        visibility: visible; 
+    }
+    45%{
+        left: 100%;
+        opacity: 0; 
+        visibility: hidden;
+    }
+    50%{
+        left: 100%;
+        opacity: 0; 
+        visibility: hidden;
+    }
+    51%{
+        opacity: 1; 
+        visibility: visible;  
+    }
+    96%{
+        opacity: 1; 
+        visibility: visible; 
+    }
+    97%{
+        left: -10%;
+        opacity: 0; 
+        visibility: hidden;
+    }
+    100% {
+        left: -10%;
+        opacity: 0; 
+        visibility: hidden;
+        
+    }
+  }
+  
+  /* Animación de Nido moviéndose de izquierda a derecha */
+  @keyframes moveNido {
+    0% {
+        left: -10%; 
+        opacity: 1; 
+        visibility: visible; 
+    }
+    44%{
+        opacity: 1; 
+        visibility: visible; 
+    }
+    45%{
+        left: 100%;
+        opacity: 0; 
+        visibility: hidden;
+    }
+    55%{
+        left: 100%;
+        opacity: 0; 
+        visibility: hidden;
+    }
+    56%{
+        opacity: 1; 
+        visibility: visible;  
+    }
+    97%{
+        opacity: 1; 
+        visibility: visible; 
+    }
+    98%{
+        left: -10%;
+        opacity: 0; 
+        visibility: hidden;
+    }
+    100% {
+        left: -10%;
+        opacity: 0; 
+        visibility: hidden;
+        
+    }
+  }
+  @keyframes moveNido2 {
+    0% {
+      left: -10%; 
+      opacity: 1; 
+      visibility: hidden; 
+    }
+    44%{
+      opacity: 0; 
+      visibility: hidden; 
+    }
+    45%{
+      left: 100%;
+      opacity: 0; 
+      visibility: hidden;
+    }
+    56%{
+      left: 100%;
+      opacity: 1; 
+      visibility: visible;
+    }
+    57%{
+      opacity: 1; 
+      visibility: visible;  
+    }
+    98%{
+        opacity: 1; 
+        visibility: visible; 
+    }
+    99%{
+        left: -10%;
+        opacity: 0; 
+        visibility: hidden;
+    }
+    100% {
+        left: -10%;
+        opacity: 0; 
+        visibility: hidden;
+        
+    }
+  }
+  @keyframes moveNido3 {
+    0% {
+      left: -10%; 
+      opacity: 1; 
+      visibility: hidden; 
+    }
+    44%{
+      opacity: 0; 
+      visibility: hidden; 
+    }
+    45%{
+      left: 100%;
+      opacity: 0; 
+      visibility: hidden;
+    }
+    57%{
+      left: 100%;
+      opacity: 1; 
+      visibility: visible;
+    }
+    58%{
+      opacity: 1; 
+      visibility: visible;  
+    }
+    99%{
+      opacity: 1; 
+      visibility: visible; 
+    }
+    100% {
+      left: -10%;
+      opacity: 0; 
+      visibility: hidden;
+    }
+  }
+  
+  /* Animación de Nido saltando mientras se mueve */
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px); /* Salto hacia arriba */
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .foto-Marquesado1{
+    animation: moveMarquesado 16s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+  }
+  .foto-Marquesado2{
+    animation: moveMarquesado 16s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+  
+  /* Aplicar salto a los Nido */
+  .foto-Nido1{
+    animation: moveNido 16s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+  }
+  .foto-Nido2{
+    animation: moveNido2  16.0s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+  }
+  .foto-Nido3{
+    animation: moveNido3  16.0s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+  }
+}
+.foto-Alianza1, .foto-Alianza2 {
+  width: 4%;
+  position: absolute;
+  margin-bottom: 100px;
+  visibility: hidden;
+  transition: opacity 0s ease 0s, visibility 0s ease 0s;
+}
+.foto-Vagabundo1 {
+  width: 4%;
+  position: absolute;
+  margin-bottom: 100px;
+  visibility: hidden;
+  transition: opacity 0s ease 0s, visibility 0s ease 0s;
+}
+@media (min-width: 769px) {
+@keyframes moveAlianza1 {
+  0% {
+      left: -10%; 
+      opacity: 1; 
+      visibility: visible; 
+  }
+  24%{
+    left: 45%;
+    opacity: 1; 
+    visibility: visible;
+
+  }
+  44%{
+      opacity: 1; 
+      visibility: visible; 
+  }
+  45%{
+      left: 45%;
+      opacity: 1; 
+      visibility: visible;
+  }
+
+  97%{
+      opacity: 1; 
+      visibility: visible; 
+  }
+
+  100% {
+      left: 100%;
+      opacity: 0; 
+      visibility: hidden;
+      
+  }
+}
+@keyframes moveAlianza2 {
+  0% {
+      left: -10%; 
+      opacity: 1; 
+      visibility: visible; 
+  }
+  24%{
+    left: 41%;
+    opacity: 1; 
+    visibility: visible;
+
+  }
+  44%{
+      opacity: 1; 
+      visibility: visible; 
+  }
+  45%{
+      left: 41%;
+      opacity: 1; 
+      visibility: visible;
+  }
+
+  97%{
+      opacity: 1; 
+      visibility: visible; 
+  }
+
+  100% {
+      left: 100%;
+      opacity: 0; 
+      visibility: hidden;
+      
+  }
+}
+@keyframes moveVagabundo1 {
+  0% {
+      right: -10%; 
+      opacity: 1; 
+      visibility: visible; 
+  }
+  24%{
+      opacity: 1; 
+      visibility: visible; 
+  }
+  25%{
+      right: 45%;
+      opacity: 1; 
+      visibility: visible;
+  }
+  55%{
+      right: 45%;
+  }
+
+  97%{
+      opacity: 1; 
+      visibility: visible; 
+  }
+
+  100% {
+      right: 100%;
+      opacity: 0; 
+      visibility: hidden;
+      
+  }
+}
+.foto-Alianza1{
+  animation: moveAlianza1 10s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+  animation-delay: 7s;
+}
+.foto-Alianza2{
+  animation: moveAlianza2 10s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+  animation-delay: 7s;
+}
+.foto-Vagabundo1{
+  animation: moveVagabundo1 10s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+  animation-delay: 7s;
+}
+.animacion-conejos{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 120px;
+  z-index: 10;
+}
+.animacion-vagabundo{
+  margin-top: 50px;
+}
+}
+.imagenes-roles-container {
+  position: relative; /* Asegura que las imágenes se posicionen respecto a este contenedor */
+  margin-top: 220px; /* Ajusta el espacio entre las imágenes y el contenido superior */
+}
+.marquesado-ganador, .nido-ganador, .alianza-ganador, .vagabundo-ganador, .marquesado-perdedor, .nido-perdedor, .alianza-perdedor, .vagabundo-perdedor {
+  z-index: 10; /* Asegúrate de que estos elementos estén sobre el footer */
+  position: absolute; /* Posicionamiento absoluto respecto a su contenedor */
+  bottom: 150px; /* Ajusta este valor para poner el margen sobre el footer */
+}
+
+/* El resto de las reglas */
+.marquesado-ganador, .marquesado-perdedor {
+  width: 5%;
+  position: absolute;
+  visibility: hidden;
+  transition: opacity 0s ease 0s, visibility 0s ease 0s;
+}
+
+.nido-ganador, .nido-perdedor {
+  width: 4%;
+  position: absolute;
+  visibility: hidden;
+  transition: opacity 0s ease 0s, visibility 0s ease 0s;
+}
+
+.alianza-ganador, .alianza-perdedor {
+  width: 4%;
+  position: absolute;
+  visibility: hidden;
+  transition: opacity 0s ease 0s, visibility 0s ease 0s;
+}
+
+.vagabundo-ganador, .vagabundo-perdedor {
+  width: 4%;
+  position: absolute;
+  visibility: hidden;
+  transition: opacity 0s ease 0s, visibility 0s ease 0s;
+}
+
+@keyframes rolGanador {
+  0% {
+    right: -10%;
+    opacity: 1;
+    visibility: visible;
+  }
+  24% {
+    opacity: 1;
+    visibility: visible;
+  }
+  40% {
+    right: 100%;
+  }
+  70% {
+    right: 65%;
+  }
+  71% {
+    right: 40%;
+  }
+  72% {
+    right: 65%;
+  }
+  73% {
+    right: 40%;
+  }
+  97% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    right: 40%;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes marquesadoPerdedor {
+  0% {
+    right: -10%;
+    opacity: 1;
+    visibility: visible;
+  }
+  24% {
+    opacity: 1;
+    visibility: visible;
+  }
+  25% {
+    right: 100%;
+  }
+  70% {
+    right: 45%;
+  }
+  72%{
+    opacity: 1;
+  }
+  73% {
+    opacity: 0.5;
+  }
+  97% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    right: 45%; /* Ajusta la posición final */
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes nidoPerdedor {
+  0% {
+    right: -10%;
+    opacity: 1;
+    visibility: visible;
+  }
+  24% {
+    opacity: 1;
+    visibility: visible;
+  }
+  30% {
+    right: 100%;
+  }
+  70% {
+    right: 50%;
+  }
+  72%{
+    opacity: 1;
+  }
+  73% {
+    opacity: 0.5;
+  }
+  97% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    right: 50%; /* Ajusta la posición final */
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes vagabundoPerdedor {
+  0% {
+    right: -10%;
+    opacity: 1;
+    visibility: visible;
+  }
+  24% {
+    opacity: 1;
+    visibility: visible;
+  }
+  33% {
+    right: 100%;
+  }
+  70% {
+    right: 55%;
+  }
+  72%{
+    opacity: 1;
+  }
+  73% {
+    opacity: 0.5;
+  }
+  97% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    right: 55%; /* Ajusta la posición final */
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes alianzaPerdedor {
+  0% {
+    right: -10%;
+    opacity: 1;
+    visibility: visible;
+  }
+  24% {
+    opacity: 1;
+    visibility: visible;
+  }
+  36% {
+    right: 100%;
+  }
+  70% {
+    right: 60%;
+  }
+  72%{
+    opacity: 1;
+  }
+  73% {
+    opacity: 0.5;
+  }
+  97% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    right: 60%; /* Ajusta la posición final */
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* Animaciones */
+.alianza-ganador,
+.marquesado-ganador,
+.nido-ganador,
+.vagabundo-ganador {
+  animation: rolGanador 15s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+}
+.marquesado-perdedor{
+  animation: marquesadoPerdedor 15s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+}
+.nido-perdedor{
+  animation: nidoPerdedor 15s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+}
+.alianza-perdedor{
+  animation: alianzaPerdedor 15s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+}
+.vagabundo-perdedor{
+  animation: vagabundoPerdedor 15s ease-in-out forwards infinite, jump 0.5s ease-in-out infinite;
+}
+
