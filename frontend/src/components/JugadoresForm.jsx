@@ -40,7 +40,7 @@ const JugadoresForm = () => {
                 creator: `/api/users/${creador}` 
             }; 
             try {
-                await addJugadorToAPI(nuevoJugador);
+                await addJugador(nuevoJugador);
                 Swal.fire({
                     icon: 'success',
                     title: 'Jugador agregado',

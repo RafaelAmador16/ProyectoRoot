@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import { getJugadores } from '../../helper/jugadoresHelper'; // Supongo que tienes una función que obtiene los jugadores
+import { addJugadorToAPI, getJugadores } from '../../helper/jugadoresHelper'; // Supongo que tienes una función que obtiene los jugadores
 import { useUser } from './UserProvider'; // Para obtener el usuario actual
 
 const JugadoresContext = createContext();
@@ -23,6 +23,20 @@ export const JugadoresProvider = ({ children }) => {
 
         setJugadores(jugadoresDelUsuario);
     };
+    const addJugador = async (nuevoJugador) => {
+        try {
+            // Insertar el jugador en el backend
+            const jugadorCreado = await addJugadorToAPI(nuevoJugador);
+
+            // Validar si el creador coincide con el usuario actual
+            if (jugadorCreado.creator === `/api/users/${user.id}`) {
+                setJugadores((prevJugadores) => [...prevJugadores, jugadorCreado]);
+            }
+        } catch (error) {
+            console.error('Error al agregar el jugador:', error);
+        }
+    };
+
 
     useEffect(() => {
         if (user) {
@@ -31,7 +45,7 @@ export const JugadoresProvider = ({ children }) => {
     }, [user]);
 
     return (
-        <JugadoresContext.Provider value={{ jugadores }}>
+        <JugadoresContext.Provider value={{ jugadores, addJugador }}>
             {children}
         </JugadoresContext.Provider>
     );
