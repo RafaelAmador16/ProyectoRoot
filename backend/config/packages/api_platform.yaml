@@ -1,0 +1,6 @@
+api_platform:
+    title: 'Mi API'
+    version: '1.0.0'
+    formats:
+        jsonld: ['application/ld+json']
+        json: ['application/json']

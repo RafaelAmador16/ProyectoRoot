@@ -1,0 +1,5 @@
+# config/routes/custom_routes.yaml
+custom_api:
+    path: /api/custom
+    controller: App\Controller\ApiCustomController::customApi
+    methods: ['GET']

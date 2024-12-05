@@ -1,0 +1,10 @@
+# config/routes/framework.yaml
+when@dev:
+    _errors:
+        resource: '@FrameworkBundle/Resources/config/routing/errors.xml'
+        prefix: /_error
+
+# Aquí agregas tu archivo de rutas personalizado:
+custom_routes:
+    resource: 'custom_routes.yaml'
+    prefix: /
