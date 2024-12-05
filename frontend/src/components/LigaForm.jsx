@@ -15,6 +15,7 @@ const LigaForm = () => {
   const [jugador4, setJugador4] = useState(0);
   const [rolesDisponibles, setRolesDisponibles] = useState([]);
   const [jugadoresFiltrados, setJugadoresFiltrados] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setRolesDisponibles([
@@ -57,9 +58,11 @@ const LigaForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
 
     if (!nombre || !jugador1 || !jugador2 || !jugador3 || !jugador4) {
       console.error("Es necesario un nombre y 4 jugadores");
+      setLoading(false)
       return;
     }
 
@@ -118,10 +121,15 @@ const LigaForm = () => {
         setJugador3(0);
         setJugador4(0);
       }
+      setLoading(false)
     } catch (error) {
       console.error("Error al crear la liga, jornadas o asociar jugadores:", error);
+      setLoading(false)
     }
   };
+  if(loading){
+    return <div className="loading">Creando liga, jornadas y partidas...</div>
+  }
 
   return (
     <div>
