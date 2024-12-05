@@ -6,11 +6,13 @@ services:
       dockerfile: Dockerfile
     container_name: symfony-backend
     volumes:
-      - ./backend:/var/www/html  # Mapea tu directorio local al contenedor
+      - ./backend:/var/www/html # Mapea tu directorio local al contenedor
     networks:
       - app-network
     ports:
-      - "8000:8000"  # Exponer el puerto del backend
+      - "8000:8000" # Exponer el puerto del backend
+    depends_on:
+      - db # Asegúrate de que la base de datos esté disponible antes de iniciar el backend
 
   frontend:
     build:
@@ -18,11 +20,11 @@ services:
       dockerfile: Dockerfile
     container_name: react-frontend
     volumes:
-      - ./frontend:/app  # No sobrescribir la carpeta build
+      - ./frontend:/app # Mapea tu directorio local al contenedor
     networks:
       - app-network
     ports:
-      - "5173:5173"  # Exponer el puerto del frontend
+      - "5173:5173" # Exponer el puerto del frontend
 
   db:
     image: mysql:8.0
@@ -33,9 +35,12 @@ services:
       MYSQL_USER: symfony
       MYSQL_PASSWORD: symfony
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql # Almacena los datos de la base de datos
+      - ./db/init:/docker-entrypoint-initdb.d # Archivos SQL de inicialización
     networks:
       - app-network
+    ports:
+      - "3306:3306" # Exponer el puerto de MySQL para desarrollo local
 
 networks:
   app-network:
